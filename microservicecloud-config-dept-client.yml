@@ -7,7 +7,7 @@ server:
   port: 8001
 spring:
      profiles: dev
-   application:
+     application:
     name: microservicecloud-dept-client    #微服务名字 注册进Eurka 显示的名称
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
