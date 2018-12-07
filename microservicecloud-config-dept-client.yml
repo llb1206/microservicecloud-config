@@ -5,9 +5,16 @@
 ---
 server:
   port: 8001
+  
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.llb.springcloud.bean    # 所有bean别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+    
 spring:
-     profiles: dev
-     application:
+   profiles: dev
+   application:
     name: microservicecloud-config-dept-client    #微服务名字 注册进Eurka 显示的名称
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
@@ -19,18 +26,14 @@ spring:
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
-      max-wait-millis: 200      
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+ 
   
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
-  type-aliases-package: com.llb.springcloud.bean    # 所有bean别名类所在包
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件 
  
 eureka:
   client: #客户端注册进eureka服务列表内  往eureka里面注册服务 Eureka自动转换大写
     service-url: 
-      defaultZone: http://eureka7001.com:7001/eureka/  #注册服务器地址 就是总服务器地址
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka,http://eureka7001.com:7001/eureka  #注册服务器地址 就是总服务器地址
       # 倒进pom  不带server表示是客户端  
   instance:
      instance-id: provider-dept8001  #修改Eureka注册中心微服务的名称  默认名称在---14---行，因为其他人可能看不懂，所以修改！
@@ -43,6 +46,12 @@ info:
   build.artifactId: $project.artifactId$
   build.version: $project.version$
      #其实就是给info页面一个json串而已  但是需要在总项目加装插件
+ 
+ 
+
+ 
+
+
 ---
 server:
   port: 8001
