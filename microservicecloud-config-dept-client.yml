@@ -3,7 +3,7 @@
      active:
      - dev
 ---
-server:
+server: 
   port: 8001
   
 mybatis:
@@ -12,9 +12,9 @@ mybatis:
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                
     
-spring:
+spring: 
    profiles: dev
-   application:
+   application: 
     name: microservicecloud-config-dept-client 
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource          
@@ -53,11 +53,11 @@ info:
 
 
 ---
-server:
+server: 
   port: 8001
-spring:
+spring: 
      profiles: test
-   application:
+   application: 
     name: microservicecloud-config-dept-client
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource        
