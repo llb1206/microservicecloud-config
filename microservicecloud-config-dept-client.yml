@@ -53,11 +53,11 @@ info:
 
 
 ---
-server : 
-  port : 8001
+ server : 
+   port : 8001
 spring : 
      profiles : test
-   application : 
+     application : 
     name : microservicecloud-config-dept-client
    datasource :
     type : com.alibaba.druid.pool.DruidDataSource        
