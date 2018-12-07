@@ -33,7 +33,7 @@ spring:
 eureka:
   client: #客户端注册进eureka服务列表内  往eureka里面注册服务 Eureka自动转换大写
     service-url: 
-      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka,http://eureka7001.com:7001/eureka  #注册服务器地址 就是总服务器地址
+      defaultZone: http://eureka7001.com:7001/eureka  #注册服务器地址 就是总服务器地址
       # 倒进pom  不带server表示是客户端  
   instance:
      instance-id: provider-dept8001  #修改Eureka注册中心微服务的名称  默认名称在---14---行，因为其他人可能看不懂，所以修改！
