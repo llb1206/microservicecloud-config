@@ -55,7 +55,7 @@ info:
 ---
  server : 
    port : 8001
-spring : 
+ spring : 
      profiles : test
      application : 
     name : microservicecloud-config-dept-client
@@ -71,13 +71,13 @@ spring :
       max-total: 5                                      
       max-wait-millis: 200
   
-mybatis :
+ mybatis :
   config-location: classpath:mybatis/mybatis.cfg.xml     
   type-aliases-package : com.llb.springcloud.bean
   mapper-locations :
   - classpath:mybatis/mapper/**/*.xml        
  
-eureka : 
+ eureka : 
   client : 
     service-url :  
       defaultZone : http://eureka7001.com:7001/eureka/ 
@@ -87,7 +87,7 @@ eureka :
                                     
      prefer-ip-address: true 
 
-info :
+ info :
   app.name: llb-microservicecloud
   company.name: www.llb.com
   build.artifactId: $project.artifactId$
